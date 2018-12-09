@@ -9,9 +9,9 @@ import re
 
 def getUserPasCode():
 
-    user_input = input('')
+    user_input = input('getUserPasCode: ')
 
-    if (re.match(r"(\W{2}),(-),(\d{3}),(-),(\d{1})", user_input) ):
+    if (re.match(r"(\w{2})(-)(\d{3})(-)(\d{1})", user_input) ):
         return user_input
     else:
         return False
@@ -24,9 +24,9 @@ def getUserPasCode():
 """
 
 def getCountryName():
-    user_input = input('')
+    user_input = input('getCountryName: ')
 
-    if (re.search(r"/w+", user_input) ):
+    if (re.search(r"\w+", user_input) ):
         return user_input
     else:
         return False
@@ -41,9 +41,9 @@ def getCountryName():
 
 
 def getMoney():
-    user_input = input('')
+    user_input = input('getMoney: ')
 
-    if (re.match(r"(/d{1-4},/.,/d{1-2}), ,usd", user_input) ):
+    if (re.match(r"(\d{1,4}\.\d{1,2})(\s{1})(usd)", user_input) ):
         return user_input
     else:
         return False

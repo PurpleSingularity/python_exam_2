@@ -4,23 +4,18 @@ from data import dataset
 #   Викликати функцію
 
 
-def addUserProduct(user_name, product_name, product_price):
-    #TODO
+def addUser(user_code, country_name, money):
+    if user_code not in dataset:
+    	dataset.setdefault(user_code)
+    	dataset[user_code] = dict()
+    	dataset[user_code].setdefault(country_name)
+    	dataset[user_code][country_name]=[money]
+    else:
+    	if country_name not in dataset[user_code]:
+    		dataset[user_code].setdefault(country_name)
+    		dataset[user_code][country_name]=[money]
+    	else:
+    		dataset[user_code][country_name].append(money)
 
 
 
-print("Task 1")
-
-#Додати нового користувача та нову покупку
-addUserProduct(?,?,?)
-
-#Додати існуючому користувачу нову покупку нового продукту
-addUserProduct(?,?,?)
-
-#Додати існуючому користувачу нову покупку існуючого продукту
-addUserProduct(?,?,?)
-
-print(dataset)
-
-
-print("\n\n")
